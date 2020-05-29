@@ -1,0 +1,58 @@
+<section id="intro-section-wrapper" #home>
+  <div id="particles-js"></div>
+  <div id="title-bar">
+    <h1>Avery Fairbanks <mark style="background: none; color: inherit; font-weight: 800"><br> Designer & Developer</mark></h1>
+  </div>
+  <div class="icon-container" (click)="scrollTo(page_one)">
+    <mat-icon>mouse</mat-icon><br>
+    <mat-icon>expand_more</mat-icon>
+  </div>
+</section>
+<div class="header" color="primary">
+  <button mat-button (click)="scrollTo(home)">Home</button>
+  <button mat-button (click)="scrollTo(page_one)">About</button>
+  <button mat-button (click)="scrollTo(page_two)">Projects</button>
+  <button mat-button (click)="scrollTo(page_three)">Contact</button>
+</div>
+<section id="main-content">
+  <div id="first-page-container" #page_one>
+    <div id="first-page-content" [ngClass]="{'fade-in-up': firstPageInView, 'before-fade-in-up': !firstPageInView}">
+      <h1>About Me</h1>
+      <p>
+        Hailing originally from New England, Avery is a developer - specifically focused on full stack web design & development -
+        whose main expertise lies in Angular web framework and Java SpringBoot. However, they remain a multidisciplinary
+        programmer and continue to learn new languages and frameworks.
+      </p>
+    </div>
+  </div>
+
+  <div id="second-page-container" #page_two>
+    <div class="first-project" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+      <!--img src="assets/WSU_Logo_Seal_Type_Vt-Blue287.png" style="height: auto; width: 60%">
+      <a href="https://gitlab.com/LibreFoodPantry/modules/visitmodule-tp/checkout/CheckoutFrontEnd">
+        <img src="assets/theas_pantry_logo.png" style="height: auto; width: 60%; padding: 0 20px 5px 20px; margin-top: 4vh; background: #00338e">
+      </a-->
+      <p>
+        Tasked with creating a full stack web application for handling checkouts at the food pantry. I handled large portions of the
+        SpringBoot Rest API and design and developed the UI & UX using Angular.
+      </p>
+    </div>
+
+
+    <div class="second-project" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+
+    </div>
+
+    <div class="third-project" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+      <p>
+        This very site is the third revision of my personal site, which began as a project for my Software Construction course.
+        All three versions have been built in Angular, integrating new features and technologies as I learned them.
+        While not exhaustive, this site represents the culmination of all my relevant design and development skills.
+      </p>
+    </div>
+  </div>
+
+  <div id="third-page-container" #page_three>
+
+  </div>
+</section>
