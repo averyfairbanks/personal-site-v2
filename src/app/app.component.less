@@ -128,7 +128,7 @@
     grid-column: 2 / span 3;
     grid-row: 2 / span 1;
     padding: 5vh 5vw;
-    width: 70%;
+    width: 80%;
     justify-self: center;
     background: linear-gradient(135deg, rgba(115, 194, 174, 0.5), rgba(206, 196, 217, 0.5));
     box-shadow: @tile-shadow;
@@ -152,68 +152,63 @@
     height: @page-height;
     width: @page-width;
     background: linear-gradient(-45deg, rgba(115, 194, 174, 0.5), rgba(206, 196, 217, 0.5));
-    text-align: center;
+    /*text-align: center;
     display: grid;
     grid-template-columns: 10vw 1fr 1fr 1fr 10vw;
     grid-template-rows: auto 70% auto;
     grid-gap: 2vw;
+     */
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
 
-  .first-project {
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
-    padding: 15% 10%;
-    background-color: whitesmoke;
-    background-image: url("src/assets/WSU_Logo_Seal_Type_Vt-Blue287.png") , url("src/assets/theas_pantry_logo.png");
-    background-position: 50% 25%, 50% 80%;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 60%, 80%;
-    transition: transform 500ms ease, box-shadow 100ms;
-    p {
-      height: 100%;
-      width: 100%;
-      font-family: @body-font;
-      font-size: large;
-      color: #3d3d3d;
-      transition: opacity 500ms;
-      opacity: 0;
-    }
+  html,
+  body,
+  .view {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 60% auto;
   }
 
-  .first-project:hover {
-    transform: scale(1.2);
+  .carousel {
+    height: 100vh;
+  }
+
+  .carousel .carousel-inner {
+    height: 100vh;
+  }
+
+  .carousel .carousel-inner .carousel-item,
+  .carousel .carousel-inner .active {
+    height: 100vh;
+  }
+
+  .first-project {
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 1;
+    width: 80%;
+    justify-self: center;
+    background: whitesmoke;
     box-shadow: @tile-shadow;
-    p {
-      opacity: 1;
-      filter: none;
-    }
   }
 
   .second-project {
-    grid-column: 3 / span 1;
+    grid-column: 2 / span 3;
     grid-row: 2 / span 1;
+    width: 80%;
+    justify-self: center;
     background: whitesmoke;
-    padding: 10% 5vh;
-    transition: transform 300ms ease, box-shadow 100ms;
-  }
-
-  .second-project:hover {
-    transform: scale(1.2);
     box-shadow: @tile-shadow;
   }
 
   .third-project {
-    grid-column: 4 / span 1;
+    grid-column: 2 / span 3;
     grid-row: 2 / span 1;
+    width: 80%;
+    justify-self: center;
     background: whitesmoke;
-    padding: 10% 5vh;
-    transition: transform 300ms ease, box-shadow 100ms;
-  }
-
-  .third-project:hover {
-    transform: scale(1.2);
     box-shadow: @tile-shadow;
   }
 
