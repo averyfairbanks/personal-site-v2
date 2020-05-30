@@ -10,6 +10,7 @@ export class AppComponent implements OnInit{
 
   firstPageInView: boolean = false
   secondPageInView: boolean = false;
+  thirdPageInView: boolean = false;
 
   ngOnInit() {
     // @ts-ignore

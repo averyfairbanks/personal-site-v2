@@ -26,6 +26,7 @@
     -moz-animation: @gradient-animation 60s ease infinite;
     animation: @gradient-animation 60s ease infinite;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     .icon-container {
       width: @page-width;
       height: fit-content;
@@ -112,6 +113,10 @@
     }
   }
 
+  .mat-button {
+    outline: none !important;
+  }
+
   #first-page-container {
     height: @page-height;
     width: @page-width;
@@ -127,8 +132,8 @@
   #first-page-content {
     grid-column: 2 / span 3;
     grid-row: 2 / span 1;
-    padding: 5vh 5vw;
-    width: 80%;
+    padding: 6vh 6vw;
+    width: 90%;
     justify-self: center;
     background: linear-gradient(135deg, rgba(115, 194, 174, 0.5), rgba(206, 196, 217, 0.5));
     box-shadow: @tile-shadow;
@@ -140,7 +145,7 @@
       margin-block-end: 1vh;
     }
     p {
-      font-size: calc(10px + 1vw);
+      font-size: calc(10px + 1.2vw);
       font-weight: 300;
       line-height: 6vh;
       margin-block-start: 2vh;
@@ -152,12 +157,6 @@
     height: @page-height;
     width: @page-width;
     background: linear-gradient(-45deg, rgba(115, 194, 174, 0.5), rgba(206, 196, 217, 0.5));
-    /*text-align: center;
-    display: grid;
-    grid-template-columns: 10vw 1fr 1fr 1fr 10vw;
-    grid-template-rows: auto 70% auto;
-    grid-gap: 2vw;
-     */
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
@@ -169,7 +168,34 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto 60% auto;
+    grid-template-rows: 30% 62% auto;
+  }
+
+  .project-title {
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 1;
+    align-self: end;
+    padding-top: 3vh;
+    text-align: center;
+    display: flex;
+    height: 60%;
+    width: 100%;
+    h1 {
+      color: #3d3d3d;
+      font-size: @title-font-size;
+      font-weight: 600;
+    }
+    a {
+      height: available;
+      width: 100%;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      height: 80%;
+      width: auto;
+      object-fit: contain;
+    }
   }
 
   .carousel {
@@ -185,31 +211,22 @@
     height: 100vh;
   }
 
-  .first-project {
+  .project-tile {
     grid-column: 2 / span 3;
     grid-row: 2 / span 1;
-    width: 80%;
+    width: 100%;
     justify-self: center;
     background: whitesmoke;
     box-shadow: @tile-shadow;
-  }
-
-  .second-project {
-    grid-column: 2 / span 3;
-    grid-row: 2 / span 1;
-    width: 80%;
-    justify-self: center;
-    background: whitesmoke;
-    box-shadow: @tile-shadow;
-  }
-
-  .third-project {
-    grid-column: 2 / span 3;
-    grid-row: 2 / span 1;
-    width: 80%;
-    justify-self: center;
-    background: whitesmoke;
-    box-shadow: @tile-shadow;
+    padding: 4vh 6vw;
+    p {
+      text-align: center;
+      font-size: calc(10px + 0.8vw);
+      font-weight: 300;
+      line-height: calc(4vh + 1vw);
+      margin-block-start: 2vh;
+      margin-block-end: 0;
+    }
   }
 
   #third-page-container {

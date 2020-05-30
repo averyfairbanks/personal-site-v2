@@ -8,12 +8,12 @@
     <mat-icon>expand_more</mat-icon>
   </div>
 </section>
-<!--div class="header" color="primary">
+<div class="header" color="primary">
   <button mat-button (click)="scrollTo(home)">Home</button>
   <button mat-button (click)="scrollTo(page_one)">About</button>
   <button mat-button (click)="scrollTo(page_two)">Projects</button>
   <button mat-button (click)="scrollTo(page_three)">Contact</button>
-</div-->
+</div>
 <section id="main-content">
   <div id="first-page-container" #page_one>
     <div id="first-page-content" [ngClass]="{'fade-in-up': firstPageInView, 'before-fade-in-up': !firstPageInView}">
@@ -27,46 +27,42 @@
   </div>
 
   <div id="second-page-container" #page_two>
-    <!--div class="first-project" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
-      <img src="assets/WSU_Logo_Seal_Type_Vt-Blue287.png" style="height: auto; width: 60%">
-      <a href="https://gitlab.com/LibreFoodPantry/modules/visitmodule-tp/checkout/CheckoutFrontEnd">
-        <img src="assets/theas_pantry_logo.png" style="height: auto; width: 60%; padding: 0 20px 5px 20px; margin-top: 4vh; background: #00338e">
-      </a>
-      <p>
-        Tasked with creating a full stack web application for handling checkouts at the food pantry. I handled large portions of the
-        SpringBoot Rest API and design and developed the UI & UX using Angular.
-      </p>
-    </div>
 
-
-    <div class="second-project" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
-
-    </div>
-
-    <div class="third-project" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
-      <p>
-        This very site is the third revision of my personal site, which began as a project for my Software Construction course.
-        All three versions have been built in Angular, integrating new features and technologies as I learned them.
-        While not exhaustive, this site represents the culmination of all my relevant design and development skills.
-      </p>
-    </div-->
-    <mdb-carousel [isControls]="true" [animation]="'slide'">
+    <mdb-carousel [isControls]="true" [animation]="'slide'" [interval]="'0'" [allowSwipe]="true">
       <mdb-carousel-item>
         <div class="view">
-          <div class="first-project">
-            stuff
+          <div class="project-title">
+            <a href="https://gitlab.com/LibreFoodPantry/modules/visitmodule-tp/checkout">
+              <img src="/assets/theas_pantry_logo.png" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+            </a>
+          </div>
+          <div class="project-tile" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+            <p>
+              Tasked with creating a full stack web application for handling checkouts at the food pantry. I handled large portions of the
+              <b>SpringBoot Rest API</b> as well as designing the <b>UI & UX</b> using Adobe Xd and implementing it with <b>Angular</b>. <br><br>I wrote numerous Angular animations
+              for window transitions as well as utilizing Form Validators, Services, Emitters, and tons more tools that the framework has to offer.
+              This was easily the largest and most ambitious project I have worked on but I look forward to surpassing it.
+            </p>
           </div>
         </div>
       </mdb-carousel-item>
       <mdb-carousel-item>
         <div class="view">
-          <div class="mask flex-center rgba-black-light">
+          <div class="project-title" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}" style="padding-top: 0; height: 80%">
+            <img src="/assets/potential-logo.svg" style="align-self: center; height: 70%;">
+          </div>
+          <div class="project-tile" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+            <p>
+              This very site is the third revision of my personal site, which began as a project for my Software Construction course.
+              All three versions have been built in Angular, integrating new features and technologies as I learned them.
+              While not exhaustive, this site represents the culmination of all my relevant design and development skills.
+            </p>
           </div>
         </div>
       </mdb-carousel-item>
       <mdb-carousel-item>
         <div class="view">
-          <div class="mask flex-center rgba-black-light">
+          <div class="project-tile" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
           </div>
         </div>
       </mdb-carousel-item>
