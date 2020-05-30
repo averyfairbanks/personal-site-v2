@@ -90,7 +90,7 @@
   <div id="third-page-container" #page_three>
     <div id="third-page-content" [ngClass]="{'fade-in-up': thirdPageInView, 'before-fade-in-up': !thirdPageInView}">
 
-      <form name="contact" method="post" class="text-center border border-light p-5" [formGroup]="contactForm">
+      <form name="contact" method="post" class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <input type="hidden" name="form-name" value="contact" />
 
         <p class="h4 mb-4">Contact</p>
