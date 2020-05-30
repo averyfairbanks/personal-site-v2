@@ -160,6 +160,9 @@
     color: #3d3d3d;
     font-size: calc(20px + 1.7vw);
     font-weight: 600;
+    text-align: center;
+    padding-top: 2vh;
+    width: 100%;
   }
   .project-title a {
     height: available;
@@ -199,12 +202,74 @@
     margin-block-start: 2vh;
     margin-block-end: 0;
   }
+  .project-tile p .mat-icon {
+    cursor: pointer;
+    font-family: "Material Icons";
+    font-size: 90px;
+    height: 90px;
+    width: 90px;
+  }
   #third-page-container {
     height: 100vh;
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 35% 1fr 1fr;
+    grid-template-rows: 14% 70% auto 7%;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     background: whitesmoke;
+  }
+  #third-page-content {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    width: 100%;
+    padding: 0 calc(5vw - 45px);
+    box-sizing: border-box;
+    justify-self: center;
+    background: linear-gradient(135deg, rgba(115, 194, 174, 0.5), rgba(206, 196, 217, 0.5));
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    font-family: Lato, sans-serif !important;
+    color: #3d3d3d;
+  }
+  #third-page-content .btn-outline-info,
+  #third-page-content .btn-outline-info.disabled,
+  #third-page-content .btn-outline-info:disabled {
+    border: 2px solid #3d3d3d !important;
+    color: #3d3d3d !important;
+  }
+  #third-page-content .btn-outline-info {
+    color: #3d3d3d !important;
+  }
+  #third-page-content label {
+    font-size: calc(5px + 1vw);
+  }
+  #third-page-content .p-5 {
+    padding: 4.5rem !important;
+  }
+  #third-page-content p {
+    color: #3d3d3d;
+    font-size: calc(20px + 1vw);
+    font-weight: 600;
+  }
+  #third-page-content form {
+    height: 100%;
+    border: none !important;
+  }
+  .footer {
+    grid-column: 1 / span all;
+    grid-row: 4 / span 1;
+    height: 100%;
+    display: block;
+    text-align: center;
+    object-fit: contain;
+    width: 100%;
+    background: linear-gradient(-135deg, rgba(115, 194, 174, 0.5), rgba(206, 196, 217, 0.5));
+  }
+  .footer a {
+    height: 100%;
+  }
+  .footer img {
+    height: 95%;
   }
   .before-fade-in-up {
     opacity: 0;

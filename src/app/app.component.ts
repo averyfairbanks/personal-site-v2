@@ -1,4 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
+import { EmailHandlerService } from './services/email-handler.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +13,20 @@ export class AppComponent implements OnInit{
   firstPageInView: boolean = false
   secondPageInView: boolean = false;
   thirdPageInView: boolean = false;
+  contactForm: FormGroup;
+  disabledSubmitButton: boolean = true;
+  optionsSelect: Array<any>;
+
+  constructor(private fb: FormBuilder, private emailHandler: EmailHandlerService) {
+
+    this.contactForm = fb.group({
+      'contactFormName': ['', Validators.required],
+      'contactFormEmail': ['', Validators.compose([Validators.required, Validators.email])],
+      'contactFormSubjects': ['', Validators.required],
+      'contactFormMessage': ['', Validators.required],
+      'contactFormCopy': [''],
+    });
+  }
 
   ngOnInit() {
     // @ts-ignore
@@ -18,6 +34,13 @@ export class AppComponent implements OnInit{
     particlesJS.load('particles-js', 'assets/particlesjs-config.json', function() {
       console.log('callback - particles.js config loaded');
     });
+  }
+
+  @HostListener('input') oninput() {
+
+    if (this.contactForm.valid) {
+      this.disabledSubmitButton = false;
+    } else this.disabledSubmitButton = true;
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -29,6 +52,19 @@ export class AppComponent implements OnInit{
 
     if(height >= 1400) this.secondPageInView = true;
     else this.secondPageInView = false;
+
+    if(height >= 2300) this.thirdPageInView = true;
+    else this.thirdPageInView = false;
+  }
+
+  onSubmit() {
+    this.emailHandler.sendMessage(this.contactForm.value).subscribe(() => {
+      alert('Your message has been sent.');
+      this.contactForm.reset();
+      this.disabledSubmitButton = true;
+    }, error => {
+      console.log('Error', error);
+    });
   }
 
   scrollTo(element: HTMLElement) {
