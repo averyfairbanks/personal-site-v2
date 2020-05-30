@@ -92,6 +92,9 @@
 
       <form name="contact" method="post" class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <input type="hidden" name="form-name" value="contact" />
+        <p style='display: none;'>
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
 
         <p class="h4 mb-4">Contact</p>
 
