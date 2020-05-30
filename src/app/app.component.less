@@ -26,6 +26,7 @@
     -moz-animation: @gradient-animation 60s ease infinite;
     animation: @gradient-animation 60s ease infinite;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     .icon-container {
       width: @page-width;
       height: fit-content;
@@ -112,6 +113,10 @@
     }
   }
 
+  .mat-button {
+    outline: none !important;
+  }
+
   #first-page-container {
     height: @page-height;
     width: @page-width;
@@ -127,8 +132,8 @@
   #first-page-content {
     grid-column: 2 / span 3;
     grid-row: 2 / span 1;
-    padding: 5vh 5vw;
-    width: 70%;
+    padding: 6vh 6vw;
+    width: 90%;
     justify-self: center;
     background: linear-gradient(135deg, rgba(115, 194, 174, 0.5), rgba(206, 196, 217, 0.5));
     box-shadow: @tile-shadow;
@@ -140,7 +145,7 @@
       margin-block-end: 1vh;
     }
     p {
-      font-size: calc(10px + 1vw);
+      font-size: calc(10px + 1.2vw);
       font-weight: 300;
       line-height: 6vh;
       margin-block-start: 2vh;
@@ -152,69 +157,76 @@
     height: @page-height;
     width: @page-width;
     background: linear-gradient(-45deg, rgba(115, 194, 174, 0.5), rgba(206, 196, 217, 0.5));
-    text-align: center;
-    display: grid;
-    grid-template-columns: 10vw 1fr 1fr 1fr 10vw;
-    grid-template-rows: auto 70% auto;
-    grid-gap: 2vw;
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
 
-  .first-project {
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
-    padding: 15% 10%;
-    background-color: whitesmoke;
-    background-image: url("src/assets/WSU_Logo_Seal_Type_Vt-Blue287.png") , url("src/assets/theas_pantry_logo.png");
-    background-position: 50% 25%, 50% 80%;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 60%, 80%;
-    transition: transform 500ms ease, box-shadow 100ms;
-    p {
-      height: 100%;
-      width: 100%;
-      font-family: @body-font;
-      font-size: large;
+  html,
+  body,
+  .view {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 30% 62% auto;
+  }
+
+  .project-title {
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 1;
+    align-self: end;
+    padding-top: 3vh;
+    text-align: center;
+    display: flex;
+    height: 60%;
+    width: 100%;
+    h1 {
       color: #3d3d3d;
-      transition: opacity 500ms;
-      opacity: 0;
+      font-size: @title-font-size;
+      font-weight: 600;
+    }
+    a {
+      height: available;
+      width: 100%;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      height: 80%;
+      width: auto;
+      object-fit: contain;
     }
   }
 
-  .first-project:hover {
-    transform: scale(1.2);
+  .carousel {
+    height: 100vh;
+  }
+
+  .carousel .carousel-inner {
+    height: 100vh;
+  }
+
+  .carousel .carousel-inner .carousel-item,
+  .carousel .carousel-inner .active {
+    height: 100vh;
+  }
+
+  .project-tile {
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 1;
+    width: 100%;
+    justify-self: center;
+    background: whitesmoke;
     box-shadow: @tile-shadow;
+    padding: 4vh 6vw;
     p {
-      opacity: 1;
-      filter: none;
+      text-align: center;
+      font-size: calc(10px + 0.8vw);
+      font-weight: 300;
+      line-height: calc(4vh + 1vw);
+      margin-block-start: 2vh;
+      margin-block-end: 0;
     }
-  }
-
-  .second-project {
-    grid-column: 3 / span 1;
-    grid-row: 2 / span 1;
-    background: whitesmoke;
-    padding: 10% 5vh;
-    transition: transform 300ms ease, box-shadow 100ms;
-  }
-
-  .second-project:hover {
-    transform: scale(1.2);
-    box-shadow: @tile-shadow;
-  }
-
-  .third-project {
-    grid-column: 4 / span 1;
-    grid-row: 2 / span 1;
-    background: whitesmoke;
-    padding: 10% 5vh;
-    transition: transform 300ms ease, box-shadow 100ms;
-  }
-
-  .third-project:hover {
-    transform: scale(1.2);
-    box-shadow: @tile-shadow;
   }
 
   #third-page-container {

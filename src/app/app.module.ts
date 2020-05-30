@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
+import { MDBBootstrapModule } from 'angular-bootstrap-md'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonToggleModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
