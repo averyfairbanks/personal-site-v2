@@ -306,7 +306,6 @@
     opacity: 0;
     transition: opacity 1s;
   }
-
   .fade-in-up {
     opacity: 1;
     animation: fadeInUp ease 1s;
@@ -315,13 +314,11 @@
     -o-animation: fadeInUp ease 1s;
     -ms-animation: fadeInUp ease 1s;
   }
-
   @-webkit-keyframes @gradient-animation {
     0%{background-position:7% 0%}
     50%{background-position:94% 100%}
     100%{background-position:7% 0%}
   }
-
   @-moz-keyframes @gradient-animation {
     0%{background-position:7% 0%}
     50%{background-position:94% 100%}
@@ -332,14 +329,11 @@
     50%{background-position:94% 100%}
     100%{background-position:7% 0%}
   }
-
   @keyframes fadeInUp {
     from {
       transform: translate3d(0,70px,0);
       opacity: 0;
-    }
-
-    to {
+    } to {
       transform: translate3d(0,0,0);
       opacity: 1
     }
@@ -348,9 +342,7 @@
     from {
       transform: translate3d(0,70px,0);
       opacity: 0;
-    }
-
-    to {
+    } to {
       transform: translate3d(0,0,0);
       opacity: 1
     }
@@ -359,61 +351,16 @@
     from {
       transform: translate3d(0,70px,0);
       opacity: 0;
-    }
-
-    to {
+    } to {
       transform: translate3d(0,0,0);
       opacity: 1
     }
   }
-  @-o-keyframes fadeInUp {
-    from {
-      transform: translate3d(0,70px,0);
-      opacity: 0;
-    }
-
-    to {
-      transform: translate3d(0,0,0);
-      opacity: 1
-    }
-  }
-  @-ms-keyframes fadeInUp {
-    from {
-      transform: translate3d(0,50px,0);
-      opacity: 0;
-    }
-
-    to {
-      transform: translate3d(0,0,0);
-      opacity: 1
-    }
-  }
-
-  @keyframes wobble {
-    0% { bottom: 0.7vh }
-    50% { bottom: 0 }
-    100% { bottom: 0.7vh }
-  }
-  @-moz-keyframes wobble {
-    0% { bottom: 0.7vh }
-    50% { bottom: 0 }
-    100% { bottom: 0.7vh }
-  }
-  @-webkit-keyframes wobble {
-    0% { bottom: 0.7vh }
-    50% { bottom: 0 }
-    100% { bottom: 0.7vh }
-  }
-  @-o-keyframes wobble {
-    0% { bottom: 0.7vh }
-    50% { bottom: 0 }
-    100% { bottom: 0.7vh }
-  }
-  @-ms-keyframes wobble {
-    0% { bottom: 0.7vh }
-    50% { bottom: 0 }
-    100% { bottom: 0.7vh }
-  }
-
-
+  @-o-keyframes fadeInUp {from { transform: translate3d(0,70px,0); opacity: 0; } to { transform: translate3d(0,0,0); opacity: 1 } }
+  @-ms-keyframes fadeInUp { from {transform: translate3d(0,50px,0); opacity: 0; } to { transform: translate3d(0,0,0); opacity: 1 } }
+  @keyframes wobble { 0% { bottom: 0.7vh } 50% { bottom: 0 } 100% { bottom: 0.7vh } }
+  @-moz-keyframes wobble { 0% { bottom: 0.7vh } 50% { bottom: 0 } 100% { bottom: 0.7vh } }
+  @-webkit-keyframes wobble {0% { bottom: 0.7vh } 50% { bottom: 0 } 100% { bottom: 0.7vh } }
+  @-o-keyframes wobble { 0% { bottom: 0.7vh } 50% { bottom: 0 } 100% { bottom: 0.7vh } }
+  @-ms-keyframes wobble { 0% { bottom: 0.7vh } 50% { bottom: 0 } 100% { bottom: 0.7vh } }
 }
