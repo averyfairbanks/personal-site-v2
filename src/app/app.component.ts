@@ -19,9 +19,9 @@ export class AppComponent implements OnInit{
   constructor(private http: HttpClient) {
 
     this.contactForm = new FormGroup({
-      name: new FormControl(['', Validators.required]),
-      email: new FormControl(['', Validators.compose([Validators.required, Validators.email])]),
-      message: new FormControl(['', Validators.required])
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.compose([Validators.required, Validators.email])),
+      message: new FormControl('', Validators.required)
     });
   }
 
