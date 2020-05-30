@@ -22,9 +22,7 @@ export class AppComponent implements OnInit{
     this.contactForm = fb.group({
       'contactFormName': ['', Validators.required],
       'contactFormEmail': ['', Validators.compose([Validators.required, Validators.email])],
-      'contactFormSubjects': ['', Validators.required],
       'contactFormMessage': ['', Validators.required],
-      'contactFormCopy': [''],
     });
   }
 
