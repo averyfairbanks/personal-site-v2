@@ -2,26 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
 
-## Development server
+This personal site represents the vast majority of my accumulated knowledge of Angular and web design/development generally. Please forgive any spaghetti code, I built this in a matter of weeks. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+As with most web development projects, many external libraries have been integrated into this project. Many thanks to those who developed Angular Material, Material Design for Bootstrap, ParticleJS, and anyone else I may have forgotten.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+I only ask that if you use some portion of code from this project that you give proper credit and you have full permission to modify it in any way you see fit.
