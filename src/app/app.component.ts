@@ -1,5 +1,4 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import { EmailHandlerService } from './services/email-handler.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -17,7 +16,7 @@ export class AppComponent implements OnInit{
   disabledSubmitButton: boolean = true;
   optionsSelect: Array<any>;
 
-  constructor(private fb: FormBuilder, private emailHandler: EmailHandlerService) {
+  constructor(private fb: FormBuilder) {
 
     this.contactForm = fb.group({
       'contactFormName': ['', Validators.required],
@@ -37,7 +36,6 @@ export class AppComponent implements OnInit{
   }
 
   @HostListener('input') oninput() {
-
     if (this.contactForm.valid) {
       this.disabledSubmitButton = false;
     } else this.disabledSubmitButton = true;
@@ -55,16 +53,6 @@ export class AppComponent implements OnInit{
 
     if(height >= 2300) this.thirdPageInView = true;
     else this.thirdPageInView = false;
-  }
-
-  onSubmit() {
-    this.emailHandler.sendMessage(this.contactForm.value).subscribe(() => {
-      alert('Your message has been sent.');
-      this.contactForm.reset();
-      this.disabledSubmitButton = true;
-    }, error => {
-      console.log('Error', error);
-    });
   }
 
   scrollTo(element: HTMLElement) {

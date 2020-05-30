@@ -12,11 +12,9 @@ import {
   ButtonsModule,
   CardsModule,
   InputsModule,
-  CheckboxComponent,
   CheckboxModule
 } from 'angular-bootstrap-md';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {EmailHandlerService} from './services/email-handler.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +36,7 @@ import {EmailHandlerService} from './services/email-handler.service';
     CheckboxModule,
     InputsModule.forRoot(),
   ],
-  providers: [EmailHandlerService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
