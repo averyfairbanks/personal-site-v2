@@ -1,5 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Component({
@@ -15,14 +15,13 @@ export class AppComponent implements OnInit{
   thirdPageInView: boolean = false;
   contactForm: FormGroup;
   disabledSubmitButton: boolean = true;
-  optionsSelect: Array<any>;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private http: HttpClient) {
 
-    this.contactForm = fb.group({
-      'contactFormName': ['', Validators.required],
-      'contactFormEmail': ['', Validators.compose([Validators.required, Validators.email])],
-      'contactFormMessage': ['', Validators.required],
+    this.contactForm = new FormGroup({
+      name: new FormControl(['', Validators.required]),
+      email: new FormControl(['', Validators.compose([Validators.required, Validators.email])]),
+      message: new FormControl(['', Validators.required])
     });
   }
 
