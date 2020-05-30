@@ -6,4 +6,4 @@ This personal site represents the vast majority of my accumulated knowledge of A
 
 As with most web development projects, many external libraries have been integrated into this project. Many thanks to those who developed Angular Material, Material Design for Bootstrap, ParticleJS, and anyone else I may have forgotten.
 
-I only ask that if you use some portion of code from this project that you give proper credit and you have full permission to modify it in any way you see fit.
+I only ask that if you use some portion of code from this project that you give proper credit but you have full permission to modify it in any way you see fit.
