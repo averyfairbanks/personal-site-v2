@@ -5,7 +5,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css', './mobile-app.component.css']
 })
 export class AppComponent implements OnInit{
   title = 'Avery Fairbanks | Design & Development';
@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   firstPageInView: boolean = false
   secondPageInView: boolean = false;
   thirdPageInView: boolean = false;
+  mobile: boolean = false;
   contactForm: FormGroup;
   disabledSubmitButton: boolean = true;
 
@@ -68,6 +69,10 @@ export class AppComponent implements OnInit{
     particlesJS.load('particles-js', 'assets/particlesjs-config.json', function() {
       console.log('callback - particles.js config loaded');
     });
+
+    let width = window.innerWidth;
+    if(innerWidth < 1280) this.mobile = true;
+    else this.mobile = false;
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -77,11 +82,24 @@ export class AppComponent implements OnInit{
     if(height > 400) this.firstPageInView = true;
     else this.firstPageInView = false;
 
-    if(height >= 1400) this.secondPageInView = true;
+    if(height >= 1400 && !this.mobile) this.secondPageInView = true;
+    else if(height > 800 && this.mobile) this.secondPageInView = true;
     else this.secondPageInView = false;
 
-    if(height >= 2300) this.thirdPageInView = true;
+    if(height >= 2300 && !this.mobile) this.thirdPageInView = true;
+    else if(height >= 1400 && this.mobile) this.thirdPageInView = true;
     else this.thirdPageInView = false;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    let width = window.innerWidth;
+    if(width < 1280) {
+      this.mobile = true;
+    }
+    else {
+      this.mobile = false;
+    }
   }
 
   scrollTo(element: HTMLElement) {
