@@ -148,7 +148,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto 85% auto 7%;
+    grid-template-rows: auto 75% auto 7%;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     background: whitesmoke;
@@ -182,6 +182,9 @@
   #third-page-content form {
     height: 100%;
     border: none !important;
+  }
+  #third-page-content form textarea {
+    height: 100px !important;
   }
   .footer {
     grid-column: 1;
