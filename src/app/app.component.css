@@ -265,6 +265,7 @@
     grid-column: 1 / span all;
     grid-row: 4 / span 1;
     height: 100%;
+    padding-left: 4%;
     display: block;
     text-align: center;
     object-fit: contain;

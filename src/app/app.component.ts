@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient, HttpParams} from '@angular/common/http';
 
@@ -100,6 +100,16 @@ export class AppComponent implements OnInit{
     else {
       this.mobile = false;
     }
+  }
+
+  @ViewChild('carousel', { static: true }) public el: any;
+
+  @HostListener('swipeleft', ['$event']) public swipePrev(event: any) {
+    this.el.previousSlide();
+  }
+
+  @HostListener('swiperight', ['$event']) public swipeNext(event: any) {
+    this.el.nextSlide();
   }
 
   scrollTo(element: HTMLElement) {
