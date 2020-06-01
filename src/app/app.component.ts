@@ -78,7 +78,6 @@ export class AppComponent implements OnInit{
   @HostListener('window:scroll', ['$event'])
   onScroll(event) {
     let height = window.scrollY;
-    console.log(height);
     if(height > 400) this.firstPageInView = true;
     else this.firstPageInView = false;
 
@@ -100,16 +99,6 @@ export class AppComponent implements OnInit{
     else {
       this.mobile = false;
     }
-  }
-
-  @ViewChild('carousel', { static: true }) public el: any;
-
-  @HostListener('swipeleft', ['$event']) public swipePrev(event: any) {
-    this.el.previousSlide();
-  }
-
-  @HostListener('swiperight', ['$event']) public swipeNext(event: any) {
-    this.el.nextSlide();
   }
 
   scrollTo(element: HTMLElement) {

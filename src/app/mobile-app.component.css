@@ -17,6 +17,7 @@
     animation: gradient-animation 60s ease infinite;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    overflow-x: hidden;
   }
   #particles-js {
     height: 100vh;
@@ -54,6 +55,7 @@
     grid-template-rows: auto 70% auto;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    overflow-x: hidden;
   }
   #first-page-content {
     grid-column: 1;
@@ -81,19 +83,27 @@
     height: 100vh;
     width: 100%;
     background: linear-gradient(-45deg, rgba(115, 194, 174, 0.5), rgba(206, 196, 217, 0.5));
+    scroll-snap-type: x mandatory;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
   }
-  html,
-  body,
-  .view {
+  #second-page-container::-webkit-scrollbar {
+    display: none;
+  }
+  .project-container {
+    box-sizing: border-box;
     height: 100vh;
-    width: 100%;
-  }
-  .project-title {
+    min-width: 100vw;
+    object-fit: contain;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     text-align: center;
+    position: relative;
   }
-  .project-title h1 {
+  .project-container h1 {
     font-size: calc(40px + 3vw);
     color: #3d3d3d;
     font-weight: 600;
@@ -101,31 +111,28 @@
     padding-top: 2vh;
     width: 100%;
   }
-  .project-title a {
-    width: 100%;
-    height: 30%;
+  .project-container img {
+    padding-top: 10px;
+    max-width: 90%;
+    max-height: 20%;
   }
-  .project-title img {
-    height: auto;
-    width: 100%;
-  }
-  .carousel {
-    height: 100vh;
-  }
-  .carousel .carousel-inner {
-    height: 100vh;
-  }
-  .carousel .carousel-inner .carousel-item,
-  .carousel .carousel-inner .active {
-    height: 100vh;
+  .project-container .mat-icon {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.2);
+    top: 55%;
+    right: 5px;
+    font-family: "Material Icons";
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    z-index: 1000;
   }
   .project-tile {
-    height: 70%;
+    background: whitesmoke;
+    height: 65%;
     width: 100%;
     position: absolute;
-    bottom: 8%;
-    background: whitesmoke;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    bottom: 10%;
     padding: 4vh 6vw;
   }
   .project-tile p {
@@ -133,19 +140,23 @@
     font-size: calc(12px + 1vw);
     font-weight: 300;
     line-height: calc(4vh + 1vw);
-    margin-block-start: 2vh;
+    margin-block-start: 0;
     margin-block-end: 0;
   }
-  .project-tile p .mat-icon {
-    cursor: pointer;
+  .project-tile .mat-icon {
     font-family: "Material Icons";
     font-size: 90px;
     height: 90px;
     width: 90px;
+    z-index: 1000;
+    cursor: pointer;
+    position: unset !important;
+    color: unset;
   }
   #third-page-container {
     height: 100vh;
     width: 100%;
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto 75% auto 7%;
