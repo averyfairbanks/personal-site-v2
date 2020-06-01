@@ -30,8 +30,7 @@
   </div>
 
   <div id="second-page-container" #page_two>
-
-    <mdb-carousel [isControls]="!mobile" [animation]="'slide'" [interval]="0" [allowSwipe]="true" #carousel>
+    <mdb-carousel *ngIf="!mobile" [isControls]="!mobile" [animation]="'slide'" [interval]="0" [allowSwipe]="true">
       <mdb-carousel-item>
         <div class="view">
           <div class="project-title">
@@ -88,6 +87,49 @@
         </div>
       </mdb-carousel-item>
     </mdb-carousel>
+
+    <!-- Mobile Carousel alternative -->
+    <div class="project-container" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+      <img src="assets/theas_pantry_logo.png"/>
+      <mat-icon>arrow_forward_ios</mat-icon>
+      <div class="project-tile">
+        <p>
+          Tasked with creating a full stack web application for handling checkouts at the food pantry. I handled large portions of the Java
+          <strong>SpringBoot Rest API</strong> as well as designing the <strong>UI & UX</strong> using Adobe Xd and implementing it with <strong>Angular</strong>. <br><br>I wrote numerous Angular animations
+          for window transitions as well as utilizing Form Validators, Services, Emitters, and tons more tools that the framework has to offer.
+          This was easily the largest and most ambitious project I have worked on but I look forward to surpassing it.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-container" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+      <img src="assets/GitHub_Logo.png"/>
+      <mat-icon>arrow_forward_ios</mat-icon>
+      <div class="project-tile">
+        <p>
+          This very site is the third revision of my personal site, which began as a project for my Software Construction course.
+          All three versions have been built in <strong>Angular</strong>, integrating new features and technologies --
+          like <strong>Material</strong>, <strong>LESS/SASS</strong>, and many others -- as I learned them.
+          <br><br>While not exhaustive, this site represents the culmination of my relevant design and development skills.
+          In addition, I have built numerous concept sites exploring content display, all of which can be found on my
+          <a href="https://github.com/averyfairbanks" target="_blank" style="color: #73c2ae">github</a> page here.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-container" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+      <h1>Your project here!</h1>
+      <div class="project-tile">
+        <p>
+          I am currently seeking a place within a passionate and collaborative development team, and would be very excited
+          for an opportunity to join one!
+          <br><br>
+          <strong>If I seem like a good fit for your company or project, please contact me!</strong><br>
+          <mat-icon (click)="scrollTo(page_three)">email</mat-icon><br>
+          <mat-icon (click)="scrollTo(page_three)">expand_more</mat-icon>
+        </p>
+      </div>
+    </div>
 
   </div>
 
