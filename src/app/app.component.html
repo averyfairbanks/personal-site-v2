@@ -89,9 +89,9 @@
     </mdb-carousel>
 
     <!-- Mobile Carousel alternative -->
-    <div class="project-container" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+    <div class="project-container" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}" *ngIf="mobile">
       <img src="assets/theas_pantry_logo.png"/>
-      <mat-icon>arrow_forward_ios</mat-icon>
+      <mat-icon style="top: 50% !important;">arrow_forward_ios</mat-icon>
       <div class="project-tile">
         <p>
           Tasked with creating a full stack web application for handling checkouts at the food pantry. I handled large portions of the Java
@@ -102,7 +102,7 @@
       </div>
     </div>
 
-    <div class="project-container" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+    <div class="project-container" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}" *ngIf="mobile">
       <img src="assets/GitHub_Logo.png"/>
       <mat-icon>arrow_forward_ios</mat-icon>
       <div class="project-tile">
@@ -117,7 +117,7 @@
       </div>
     </div>
 
-    <div class="project-container" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}">
+    <div class="project-container" [ngClass]="{'fade-in-up': secondPageInView, 'before-fade-in-up': !secondPageInView}" *ngIf="mobile">
       <h1>Your project here!</h1>
       <div class="project-tile">
         <p>
