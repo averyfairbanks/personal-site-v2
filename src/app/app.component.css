@@ -250,7 +250,7 @@
     font-size: calc(5px + 1vw);
   }
   #third-page-content .p-5 {
-    padding: 4.5rem !important;
+    padding: 0;
   }
   #third-page-content p {
     color: #3d3d3d;
