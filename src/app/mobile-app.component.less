@@ -74,7 +74,6 @@
     grid-template-columns: auto;
     grid-template-rows: auto 70% auto;
     scroll-snap-align: start;
-    scroll-snap-stop: always;
     overflow-x: hidden;
   }
 
@@ -127,11 +126,12 @@
     text-align: center;
     position: relative;
     h1 {
-      font-size: calc(40px + 3vw);
+      font-size: calc(40px + 2vw);
       color: #3d3d3d;
-      font-weight: 600;
+      font-weight: 700;
       text-align: center;
       padding-top: 2vh;
+      line-height: 1;
       width: 100%;
     }
     img {
@@ -142,7 +142,7 @@
     .mat-icon {
       position: absolute;
       color: rgba(0, 0, 0, 0.2);
-      top: 55%;
+      top: 50%;
       right: 5px;
       font-family: "Material Icons";
       font-size: 30px;
@@ -154,7 +154,7 @@
 
   .project-tile {
     background: whitesmoke;
-    height: 65%;
+    height: 70%;
     width: 100%;
     position: absolute;
     bottom: 10%;
