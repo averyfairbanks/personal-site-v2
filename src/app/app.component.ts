@@ -78,6 +78,7 @@ export class AppComponent implements OnInit{
   @HostListener('window:scroll', ['$event'])
   onScroll(event) {
     let height = window.scrollY;
+    console.log(height);
     if(height > 400) this.firstPageInView = true;
     else this.firstPageInView = false;
 
@@ -85,7 +86,7 @@ export class AppComponent implements OnInit{
     else if(height > 800 && this.mobile) this.secondPageInView = true;
     else this.secondPageInView = false;
 
-    if(height >= 2300 && !this.mobile) this.thirdPageInView = true;
+    if(height >= 2000 && !this.mobile) this.thirdPageInView = true;
     else if(height >= 1400 && this.mobile) this.thirdPageInView = true;
     else this.thirdPageInView = false;
   }
