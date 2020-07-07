@@ -78,7 +78,6 @@ export class AppComponent implements OnInit{
   @HostListener('window:scroll', ['$event'])
   onScroll(event) {
     let height = window.scrollY;
-    console.log(height);
     if(height > 400) this.firstPageInView = true;
     else this.firstPageInView = false;
 
